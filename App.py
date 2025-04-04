@@ -5,7 +5,6 @@ from PIL import Image # Para agregar imágenes
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 st.set_page_config(page_title='Tablero Interactivo Datos de contaminación Ambiental', page_icon="🌎",layout='wide')
 #st.subheader('Análisis de emisiones en el mundo')
 st.markdown('<style>div.block-container(padding-top:lrem;)</style>', unsafe_allow_html= True)
@@ -40,7 +39,6 @@ df1_long1 = df1_reset.melt(id_vars='index', var_name="País", value_name="Emisio
 df_3=pd.read_csv('df_3.csv')
 df_4=pd.read_csv('df_4.csv')
 
-
 html_title="""
     <style>
         .title-test{
@@ -51,7 +49,6 @@ html_title="""
     </style>
     <center><h2 class="title-test"> Evolución anual de emisiones de CO2 en el mundo de 1973 - 2023 </h2></center>"""
 st.markdown(html_title,unsafe_allow_html= True)
-
 
 # Lista de organizaciones a eliminar
 organizaciones = ["G8", "G20", "World", "OECD", "OECD Americas", "OECD Asia Oceania",
@@ -72,7 +69,6 @@ fig3 = px.line(df_filtrado, x="index", y="Emisiones", color="País",width= 1328,
               labels={"Emisiones": " Millones Toneladas de CO₂", "index": "Año"},
               markers=False)
 st.plotly_chart(fig3)
-
 
 fig=px.scatter(df_pca, x='PC1',
                y='PC2', 
